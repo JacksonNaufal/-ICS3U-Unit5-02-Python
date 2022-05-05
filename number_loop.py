@@ -5,24 +5,29 @@
 # This is fahrenheit to celsius converter
 
 
-def temperature_function():
+def area_function(width, length):
 
-    temperature_string = input("Enter Your Temperature In °C: ")
+    area = round((width * length) / 2)
 
-    try:
-        temperature = int(temperature_string)
-        fahrenheit_conversion = round((temperature * 9 / 5) + 32, 2)
-
-        # output
-        print("{0}°C is equal to {1}°F".format(temperature, fahrenheit_conversion))
-    except Exception:
-        print("\nThat was not an integer")
+    # output
+    print("The area is {0}, base = {1}, height = {2}!".format(area, length, width))
 
 
 def main():
 
     # call function
-    temperature_function()
+
+    width_string = input("Enter Your width (mm): ")
+    length_string = input("Enter Your length (mm): ")
+    try:
+
+        width = int(width_string)
+        length = int(length_string)
+        area_function(width, length)
+
+    except Exception:
+        print("\nThat was not an integer!")
+
     print("\nDone.")
 
 
